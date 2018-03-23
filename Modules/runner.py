@@ -14,13 +14,18 @@ import os
 import uuid
 import subprocess
 from celery import Celery
+# sys.path.append('../')
+#from Modules import DbController
+# from Modules import DbController
 from DbController import createEntryStock
+# import createEntryStock
 from DbController import getallentries_instock
-import setMaterials
-import setInStock
-import setOutStock
+from Services import setMaterials
+from Services import setInStock
+from Services import setOutStock
 import json
 from json2html import *
+
 
 #Initializing the App
 app = Flask(__name__)
