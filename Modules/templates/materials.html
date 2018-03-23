@@ -1,0 +1,57 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <title>Stock Dashboard</title>
+       <link rel="stylesheet" media="screen" href ="../static/bootstrap.min.css">
+       
+       <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+ 
+    </head>
+    <body>
+ 
+ 
+<div class="container">
+ 
+ 
+  <h2>Stock Dashboard</h2>
+  
+  <form action = "" method = post>
+    {{ form.csrf }}
+       <div >
+          
+          {{ form.name.label }} &emsp; &emsp; &emsp; &emsp;{{ form.name }}
+          <br>
+          {{ form.typeOf.label }} &emsp; &emsp; &emsp; &emsp;{{ form.typeOf }}
+          <br>
+          {{ form.Company.label }} &emsp; &emsp; &emsp; &emsp;{{ form.Company }}
+          <br>
+          {{ form.Submit }}
+       </div>
+ </form>
+ 
+  <br>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+ 
+        {% for message in messages %}
+            {% if "Error" not in message[1]: %}
+                <div class="alert alert-info">
+                <strong>Success! </strong> {{ message[1] }}
+                </div>
+            {% endif %}
+ 
+            {% if "Error" in message[1]: %}
+                <div class="alert alert-warning">
+                {{ message[1] }}
+                </div>
+            {% endif %}
+        {% endfor %}
+            {% endif %}
+        {% endwith %}
+ 
+</div>
+<br>            
+</div>
+</div>
+</body>
+</html>
