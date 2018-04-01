@@ -22,7 +22,7 @@ from DbController import trigeerinStock
 
 
 class ReusableForm(Form):
-    sno =IntegerField('Serial No', validators=[validators.required(),validators.input_required()])
+    sno =IntegerField('Tyre No', validators=[validators.required(),validators.input_required()])
     itemid =IntegerField('Item ID', validators=[validators.required(),validators.input_required()])
     inprice =IntegerField('In Price', validators=[validators.required(),validators.input_required()])
     date = DateField(u'Date ', )
