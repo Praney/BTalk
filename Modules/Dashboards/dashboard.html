@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html>
-<body>
-
+    <head>
+        <style>
+        .button {
+            background-color: rgb(4, 4, 5);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        #example1 {
+    border: 2px solid black;
+    padding: 25px;
+    background: url(tyres.jpg);
+    background-repeat: no-repeat;
+    background-size: 1700px 800px;
+}
+        </style>
+        </head>
+<body id="example1">
+<h1 align="middle" style="color:rgb(241, 241, 240)" >Madaan Tyres and Batteries House </h1>    
 <form action="/action_page.php" method="get">
-  <button type="submit" formaction="http://localhost:8000/materials">Add material</button><br>
-  <button type="submit" formaction="http://localhost:8000/inStock">Entry for in Stock</button><br>
-  <button type="submit" formaction="http://localhost:8000/outStock">Entry for out stock</button><br>
-  <button type="submit" formaction="http://localhost:8000/allitems">See list of items</button><br>
-  <button type="submit" formaction="http://localhost:8000/instockitems">See list of in Stock items</button><br>
-  <button type="submit" formaction="http://localhost:8000/outstockitems">See list of Out Stock items</button><br>
-  <button type="submit" formaction="http://localhost:8000/noofitems">No of items</button><br>
+  <button class = "button" type="submit" formaction="http://localhost:8000/materials">Add material</button><br>
+  <button class = "button" type="submit" formaction="http://localhost:8000/inStock">Entry for in Stock</button><br>
+  <button class = "button" type="submit" formaction="http://localhost:8000/outStock">Entry for out stock</button><br>
+  <button class = "button" type="submit" formaction="http://localhost:8000/allitems">See list of items</button><br>
+  <button class = "button" type="submit" formaction="http://localhost:8000/instockitems">See list of in Stock items</button><br>
+  <button class = "button" type="submit" formaction="http://localhost:8000/outstockitems">See list of Out Stock items</button><br>
+  <button class = "button" type="submit" formaction="http://localhost:8000/noofitems">No of items</button><br>
 </form>
 
 </body>
