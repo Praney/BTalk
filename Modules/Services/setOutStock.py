@@ -19,7 +19,7 @@ from DbController import triggeroutStock
 
 class ReusableForm(Form):
     name =StringField('Name', validators=[validators.required(),validators.input_required()])
-    sno =IntegerField('Tyre No', validators=[validators.required(),validators.input_required()])
+    sno =StringField('Tyre No', validators=[validators.required(),validators.input_required()])
     itemid =IntegerField('Item ID', validators=[validators.required(),validators.input_required()])
     outprice =IntegerField('Sale Price', validators=[validators.required(),validators.input_required()])
     givenprice =IntegerField('Given Price', validators=[validators.required(),validators.input_required()])

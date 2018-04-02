@@ -8,15 +8,17 @@ import requests
 def triggeroutStock(name,sno,itemid,outprice,givenprice,date):
     global Serial
     global ItemId
-    global InPrice
-    global created_at
-    name=name
-    Serial = sno
+    global outPrice
+    global sold_at
+    global givenPrice
+    global Name
+    Name=name
+    Serial = str(sno)
     ItemId = itemid
     outPrice = outprice
-    givenprice = givenprice
+    givenPrice = givenprice
     sold_at = date
-    left_price = int(outPrice)-int(givenprice)
+    left_price = int(outPrice)-int(givenPrice)
 
 
     connection = pymysql.connect(host='localhost',
@@ -28,9 +30,10 @@ def triggeroutStock(name,sno,itemid,outprice,givenprice,date):
     try :
         with connection.cursor() as cursor:
             sql = "INSERT into outstock (sno,item_id,out_price,sold_at,given_price,name,left_price) values (%s,%s, %s,%s,%s,%s,%s)"
-            sql1="update instock set status=0 where sno="+Serial
-            cursor.execute(sql, (Serial,ItemId,outPrice,sold_at,givenprice,name,left_price))
-            cursor.execute(sql1)
+            sql1="update instock set status=0 where sno LIKE %s"
+            cursor.execute(sql, (Serial,ItemId,outPrice,sold_at,givenPrice,Name,left_price))
+            cursor.execute(sql1, (Serial, ))
+            # cursor.execute(sql1)
             # test_func()
 
         connection.commit()
