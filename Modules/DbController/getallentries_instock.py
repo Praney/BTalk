@@ -49,6 +49,31 @@ def getallinstockitems():
     finally:
         connection.close()
 
+def get_tyreno_from_instockitems(sno):
+    
+    connection = pymysql.connect(host='localhost',
+                             user='root',
+                             password='123456',
+                             db='Business',
+                             cursorclass=pymysql.cursors.DictCursor)
+    try :
+        with connection.cursor() as cursor:
+            sql = "SELECT sno from instock where sno = %s"
+            cursor.execute(sql,(sno, ))
+            # test_func()
+            data = cursor.fetchall()
+            data1 =json.dumps(data)
+            # print(data[0]["name"])
+            if sno in data1:
+                return 1
+                print("chl gya")
+            else :
+                print("Nothing")
+                return 0
+
+    finally:
+        connection.close()
+
 def getalloutstockitems():
     
     connection = pymysql.connect(host='localhost',

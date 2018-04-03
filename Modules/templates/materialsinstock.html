@@ -5,8 +5,7 @@
        <link rel="stylesheet" media="screen" href ="../static/bootstrap.min.css">
        
        <meta name="viewport" content = "width=device-width, initial-scale=1.0">
-        
-
+ 
     </head>
     <body>
  
@@ -15,22 +14,13 @@
  
  
   <h2>In Stock Dashboard</h2>
-  <a href="/materials.html">See items</a>
+  
   <form action = "" method = post>
     {{ form.csrf }}
        <div >
           
-          <h3>{{ form.sno.label }} &emsp; &emsp; &emsp; &emsp;{{ form.sno }}</h3>
-          <br>
-          <h3>{{ form.itemid.label }} &emsp; &emsp; &emsp; &emsp;{{ form.itemid }}</h3>
-          <br>
-          <h3>{{ form.inprice.label }} &emsp; &emsp; &emsp; &emsp;{{ form.inprice }}</h3>
-          <br>
-          <h3>{{ form.date.label }} &emsp; &emsp; &emsp; &emsp;{{ form.date }}</h3>
-          <br>
+          <h3>{{ form.name.label }} &emsp; &emsp; &emsp; &emsp;{{ form.name }}</h3>
           {{ form.Submit }}
-          
-
        </div>
  </form>
  
@@ -55,7 +45,6 @@
         {% endwith %}
  
 </div>
-
 <br>            
 </div>
 </div>

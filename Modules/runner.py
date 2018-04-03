@@ -20,9 +20,12 @@ from celery import Celery
 from DbController import createEntryStock
 # import createEntryStock
 from DbController import getallentries_instock
-from Services import setMaterials
-from Services import setInStock
-from Services import setOutStock
+from Forms import setMaterials
+from Forms import setInStock
+from Forms import setOutStock
+from Forms import ifTyreNo
+from Forms import setMobile
+from Forms import getMobile
 import json
 from json2html import *
 
@@ -38,6 +41,12 @@ def execute():
     setMaterials.setItem()
     # return "success"
     return render_template('materials.html', form=setMaterials.ReusableForm(request.form))
+
+@app.route('/ifinstock',methods=['GET','POST'])
+def executematerialsinstock():
+    ifTyreNo.ifIteminstock()
+    # return "success"
+    return render_template('materialsinstock.html', form=ifTyreNo.ReusableForm(request.form))
 
 @app.route('/inStock',methods=['GET','POST'])
 def executeinStock():
@@ -72,6 +81,16 @@ def noofitems():
     data = getallentries_instock.getnoofitems()
     html = json2html.convert(json=data)
     return html    
+
+@app.route('/people/phone',methods=['GET','POST'])
+def ifPhone():
+    getMobile.getPhone()
+    return render_template('phone.html', form=setMobile.ReusableForm(request.form))
+
+@app.route('/people/signup',methods=['GET','POST'])
+def phone():
+    setMobile.setPhone()
+    return render_template('People_Signup.html', form=setMobile.ReusableForm(request.form))
 
 if (__name__) == '__main__':
     app.run(debug=True,host = '0.0.0.0',port = 8000)

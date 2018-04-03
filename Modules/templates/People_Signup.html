@@ -14,19 +14,16 @@
 <div class="container">
  
  
-  <h2>In Stock Dashboard</h2>
-  <a href="/materials.html">See items</a>
+  <h2> User Signup</h2>
   <form action = "" method = post>
     {{ form.csrf }}
        <div >
           
-          <h3>{{ form.sno.label }} &emsp; &emsp; &emsp; &emsp;{{ form.sno }}</h3>
+          <h3>{{ form.name.label }} &emsp; &emsp; &emsp; &emsp;{{ form.name }}</h3>
           <br>
-          <h3>{{ form.itemid.label }} &emsp; &emsp; &emsp; &emsp;{{ form.itemid }}</h3>
+          <h3>{{ form.phone.label }} &emsp; &emsp; &emsp; &emsp;{{ form.phone }}</h3>
           <br>
-          <h3>{{ form.inprice.label }} &emsp; &emsp; &emsp; &emsp;{{ form.inprice }}</h3>
-          <br>
-          <h3>{{ form.date.label }} &emsp; &emsp; &emsp; &emsp;{{ form.date }}</h3>
+          <h3>{{ form.place.label }} &emsp; &emsp; &emsp; &emsp;{{ form.place }}</h3>
           <br>
           {{ form.Submit }}
           

@@ -16,7 +16,8 @@ import subprocess
 from celery import Celery
 # from Modules import DbController
 from DbController import createEntryStock
-
+import webbrowser
+from Services import ifMaterialPresent
 
 class ReusableForm(Form):
     # sno =IntegerField('id', validators=[validators.required(),validators.input_required()])
@@ -34,7 +35,7 @@ def setItem():
         typeOf=request.form['typeOf']
         Company=request.form['Company']
         if form.validate():
-            createEntryStock.triggerMaterials(name,typeOf,Company)
-            print("success")
+            ifMaterialPresent.ifMaterial(name,typeOf,Company)
+            print("Sucess")
         else:
             flash('Error: All the form fields are required. ')
